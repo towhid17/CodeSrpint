@@ -1,0 +1,13 @@
+*.class
+.idea/
+out/
+*.log
+.*
+!.gitignore
+atlassian-ide-plugin.xml
+target
+build
+out
+gradle
+gradlew
+gradlew.bat

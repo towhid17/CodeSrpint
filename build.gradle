@@ -1,0 +1,48 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+plugins {
+    id 'java'
+    id 'war'
+}
+
+war {
+    archiveFileName = "ROOT.war"
+}
+
+group 'net.therap'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+def springframeworkVersion = '5.3.29'
+
+dependencies {
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.6.15.Final'
+    implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '6.2.0.Final'
+    implementation group: 'io.hypersistence', name: 'hypersistence-utils-hibernate-55', version: '3.5.1'
+    implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: springframeworkVersion
+    implementation group: 'org.springframework', name: 'spring-tx', version: springframeworkVersion
+    implementation group: 'org.springframework', name: 'spring-orm', version: springframeworkVersion
+
+    implementation group: 'commons-fileupload', name: 'commons-fileupload', version: '1.4'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+
+    implementation group: 'opensymphony', name: 'sitemesh', version: '2.4.2'
+
+    implementation group: 'org.aspectj', name: 'aspectjrt', version :'1.9.7'
+    implementation group: 'org.aspectj', name: 'aspectjweaver', version: '1.9.7'
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.5'
+
+    runtimeOnly group: 'org.postgresql', name: 'postgresql', version: '42.6.0'
+}
